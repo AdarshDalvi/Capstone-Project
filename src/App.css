@@ -1,42 +1,126 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+header{
+    display: flex;
+    background-color: #F47B6E;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 15px;
+    box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header > h1{
+    color: white;
+    font-size: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ri-shopping-cart-line{
+    color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+main.photos {
+    padding: 10px;
+    display: grid;
+    grid-gap: 2px;
+    grid-auto-rows: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-flow: dense;
 }
 
-.card {
-  padding: 2em;
+img.image-grid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.read-the-docs {
-  color: #888;
+.image-container {
+    position: relative;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+.favorite , .cart{
+    font-size: 1.2rem;
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+}
+
+.favorite{
+    left: 5px;
+    color: #EA453C;
+}
+
+.cart{
+    right: 5px;
+    color: #ACE6EC;
+}
+
+.ri-heart-fill {
+    opacity: .7;
+}
+
+
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 30px;
+}
+.cart-item img {
+    margin-right: auto;
+    margin-left: 10px;   
+}
+
+main.cart-page {
+    padding: 10px;
+}
+
+.cart-page > h1 {
+    text-align: center;
+}
+
+.cart-page .total-cost {
+    text-align: right;
+    margin-right: 30px;
+    font-size: 1.3em;
+}
+
+.cart-page div.order-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+div.order-button > button {
+    border-color: black;
+    cursor: pointer;
+    padding: 15px;
+    transition: all .2s ease-in-out;
+}
+
+div.order-button > button:focus {
+    outline: none;
+}
+
+div.order-button > button:disabled {
+    border-color: lightgray;
+}
+
+.empty-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 80px);
+}
+
+.empty-cart > h1{
+    text-align: center;
 }
